@@ -8,7 +8,7 @@ order.
 
 ## Installation
 
-    $ rake gem:install
+    $ rake install
 
 
 ## Command-line Usage
