@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'mkchain'
+
+abort 'Usage: mkchain <cert-filename>' unless ARGV.count == 1
+
+filename = ARGV[0]
+abort "No such file '#{filename}'" unless File.exist?(filename)
+abort "Cannot read file '#{filename}'" unless File.readable?(filename)
+
+puts MkChain.chain(File.read(filename))
