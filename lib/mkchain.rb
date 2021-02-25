@@ -12,7 +12,7 @@ class MkChain
       url = cert.extensions.select { |ext| ext.oid == 'authorityInfoAccess' }
         .first.value.match(%r{^CA Issuers - URI:(https?://.+)$})[1] rescue break
 
-      cert = OpenSSL::X509::Certificate.new(open(url).read) rescue break
+      cert = OpenSSL::X509::Certificate.new(URI.open(url).read) rescue break
       chain << cert.to_pem
     end
 
