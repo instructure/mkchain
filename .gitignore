@@ -1,1 +1,4 @@
-/pkg
+/*.gem
+/pkg/
+
+.DS_Store

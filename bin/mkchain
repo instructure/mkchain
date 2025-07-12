@@ -1,11 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require 'mkchain'
 
-abort 'Usage: mkchain <cert-filename>' unless ARGV.count == 1
-
-filename = ARGV[0]
-abort "No such file '#{filename}'" unless File.exist?(filename)
-abort "Cannot read file '#{filename}'" unless File.readable?(filename)
-
-puts MkChain.chain(File.read(filename))
+MkChain::CLI.start if __FILE__ == $PROGRAM_NAME
