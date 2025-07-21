@@ -3,4 +3,4 @@
 
 require 'mkchain'
 
-MkChain::CLI.start if __FILE__ == $PROGRAM_NAME
+MkChain::CLI.start
